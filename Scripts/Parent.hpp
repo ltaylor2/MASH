@@ -19,10 +19,10 @@ public:
 
 	// Constructor
 	Parent(Sex, std::mt19937*,
-		   Chick*,
-		   int, int,
-		   int, int,
-		   Bout);
+	       Chick*,
+	       int, int,
+	       int, int,
+	       Bout);
 
 	void parentDay();
 

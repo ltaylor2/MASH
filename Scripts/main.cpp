@@ -58,10 +58,10 @@ int main()
 
 	// Congrats you survived! I hope the storm-petrels did too.
 	std::cout << "All model output written" 
-		  	  << std::endl
-		      << "Runtime in "
-		      << runTime.count() << " s."
-	  	      << std::endl;
+		  << std::endl
+		  << "Runtime in "
+		  << runTime.count() << " s."
+	  	  << std::endl;
 	return 0;
 }
 
@@ -79,33 +79,33 @@ void runModel(int iterations,
 
 	// Header column for CSV format
 	outfile << "iterations" << ","
-			<< "numLivingChicks" << ","
-		    << "shortForageMetabolism" << ","
-		    << "shortForageMean" << ","
-		    << "shortForageSD" << ","
-		    << "numShortBouts_F" << ","
-		    << "shortBoutLength_F" << ","
-		    << "numShortBouts_M" << ","
-		    << "shortBoutLength_M" << ","
-		    << "longForageMetabolism" << ","
-		    << "longForageMean" << ","
-		    << "longForageSD" << ","
-		    << "numLongBouts_F" << ","
-		    << "longBoutLength_F" << ","
-		    << "numLongBouts_M" << ","
-		    << "longBoutLength_M" << ","
-		    << "endEnergy_F" << ","
-		    << "meanEnergy_F" << ","
-		    << "varEnergy_F" << ","
-		    << "endEnergy_M" << ","
-		    << "meanEnergy_M" << ","
-		    << "varEnergy_M" << ","
-		    << "meanChickMass" << ","
-		    << "varChickMass" << ","
-		    << "meanChickTarsus" << ","
-		    << "varChickTarsus" << ","
-		    << "meanChickWing" << ","
-		    << "varChickWing" << std::endl;
+		<< "numLivingChicks" << ","
+	    	<< "shortForageMetabolism" << ","
+	    	<< "shortForageMean" << ","
+	    	<< "shortForageSD" << ","
+	    	<< "numShortBouts_F" << ","
+	    	<< "shortBoutLength_F" << ","
+	    	<< "numShortBouts_M" << ","
+	    	<< "shortBoutLength_M" << ","
+	    	<< "longForageMetabolism" << ","
+	    	<< "longForageMean" << ","
+	    	<< "longForageSD" << ","
+	    	<< "numLongBouts_F" << ","
+	    	<< "longBoutLength_F" << ","
+	    	<< "numLongBouts_M" << ","
+	    	<< "longBoutLength_M" << ","
+	    	<< "endEnergy_F" << ","
+	    	<< "meanEnergy_F" << ","
+	    	<< "varEnergy_F" << ","
+	    	<< "endEnergy_M" << ","
+	    	<< "meanEnergy_M" << ","
+	    	<< "varEnergy_M" << ","
+	    	<< "meanChickMass" << ","
+	    	<< "varChickMass" << ","
+	    	<< "meanChickTarsus" << ","
+	    	<< "varChickTarsus" << ","
+	    	<< "meanChickWing" << ","
+	    	<< "varChickWing" << std::endl;
 
 	/*
 	Initialize output objects to store records from each parameter combo iteration
@@ -150,7 +150,7 @@ void runModel(int iterations,
 
 		if (i % iterations / 10 == 0) {
 			std::cout << "On iteration " << i
-					  << "of " << iterations << std::endl;
+				  << "of " << iterations << std::endl;
 		}
 
 		Chick chick = Chick();
@@ -165,16 +165,16 @@ void runModel(int iterations,
 		}
 
 		Parent pf = Parent(Sex::female, randGen,
-						   &chick,
-						   numShortBouts_F, shortBoutLength_F,
-						   numLongBouts_F, longBoutLength_F,
-						   boutState_F);
+				   &chick,
+				   numShortBouts_F, shortBoutLength_F,
+				   numLongBouts_F, longBoutLength_F,
+				   boutState_F);
 
 		Parent pm = Parent(Sex::male, randGen,
-						   &chick,
-						   numShortBouts_M, shortBoutLength_M,
-						   numLongBouts_M, longBoutLength_M,
-						   boutState_M);
+				   &chick,
+				   numShortBouts_M, shortBoutLength_M,
+				   numLongBouts_M, longBoutLength_M,
+				   boutState_M);
 
 		chickSeason(pf, pm, chick);
 
@@ -203,10 +203,10 @@ void runModel(int iterations,
 	Chick sampleChick = Chick();
 
 	Parent sampleParent = Parent(Sex::female, randGen,
-								 &sampleChick,
-								 numShortBouts_F, shortBoutLength_F,
-								 numLongBouts_F, longBoutLength_F,
-								 Bout::shortBout);
+				     &sampleChick,
+				     numShortBouts_F, shortBoutLength_F,
+				     numLongBouts_F, longBoutLength_F,
+				     Bout::shortBout);
 
 	double shortForageMetabolism = sampleParent.getShortMetabolism();
 	double shortForageMean = sampleParent.getShortForageMean();
