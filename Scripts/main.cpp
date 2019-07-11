@@ -24,8 +24,7 @@ constexpr static char OUTPUT_FNAME[] = "sims.txt";
 static std::mt19937* randGen;
 
 // Prototypes -- see functions for documentation
-void runModel(int, 
-	          std::string);
+void runModel(int, std::string);
 
 void chickSeason(Parent&, Parent&, Chick&);
 
@@ -49,8 +48,7 @@ int main()
 	std::cout << "\n\n\nBeginning model runs\n\n\n";
 
 	// Standard breeding season
-	runModel(ITERATIONS, 
-			 OUTPUT_FNAME);
+	runModel(ITERATIONS, OUTPUT_FNAME);
 
 	// Report output and exit
 	auto endTime = std::chrono::system_clock::now();
@@ -128,9 +126,9 @@ void runModel(int iterations,
 	std::vector<double> varEnergy_M  = std::vector<double>();
 
 	// Chick parameters to track
-	std::vector<double> chickMass = std::vector<double>();
-	std::vector<double> chickTarsus = std::vector<double>();
-	std::vector<double> chickWing = std::vector<double>();
+	std::vector<double> chickMass    = std::vector<double>();
+	std::vector<double> chickTarsus  = std::vector<double>();
+	std::vector<double> chickWing    = std::vector<double>();
 
 	int numLivingChicks = 0;
 
@@ -209,29 +207,29 @@ void runModel(int iterations,
 				     Bout::shortBout);
 
 	double shortForageMetabolism = sampleParent.getShortMetabolism();
-	double shortForageMean = sampleParent.getShortForageMean();
-	double shortForageSD = sampleParent.getShortForageSD();
+	double shortForageMean       = sampleParent.getShortForageMean();
+	double shortForageSD         = sampleParent.getShortForageSD();
 
-	double longForageMetabolism = sampleParent.getLongMetabolism();
-	double longForageMean = sampleParent.getLongForageMean();
-	double longForageSD = sampleParent.getLongForageSD();
+	double longForageMetabolism  = sampleParent.getLongMetabolism();
+	double longForageMean        = sampleParent.getLongForageMean();
+	double longForageSD          = sampleParent.getLongForageSD();
 
-	double mean_endEnergy_F = vectorMean(endEnergy_F);
-	double mean_meanEnergy_F = vectorMean(meanEnergy_F);
-	double mean_varEnergy_F = vectorVar(varEnergy_F);
+	double mean_endEnergy_F      = vectorMean(endEnergy_F);
+	double mean_meanEnergy_F     = vectorMean(meanEnergy_F);
+	double mean_varEnergy_F      = vectorVar(varEnergy_F);
 
-	double mean_endEnergy_M = vectorMean(endEnergy_M);
-	double mean_meanEnergy_M = vectorMean(meanEnergy_M);
-	double mean_varEnergy_M = vectorVar(varEnergy_M);
+	double mean_endEnergy_M      = vectorMean(endEnergy_M);
+	double mean_meanEnergy_M     = vectorMean(meanEnergy_M);
+	double mean_varEnergy_M      = vectorVar(varEnergy_M);
 	
-	double mean_chickMass = vectorMean(chickMass);
-	double var_chickMass = vectorVar(chickMass);
+	double mean_chickMass        = vectorMean(chickMass);
+	double var_chickMass         = vectorVar(chickMass);
 
-	double mean_chickTarsus = vectorMean(chickTarsus);
-	double var_chickTarsus = vectorVar(chickTarsus);
+	double mean_chickTarsus      = vectorMean(chickTarsus);
+	double var_chickTarsus       = vectorVar(chickTarsus);
 
-	double mean_chickWing = vectorMean(chickWing);
-	double var_chickWing = vectorVar(chickWing);
+	double mean_chickWing        = vectorMean(chickWing);
+	double var_chickWing         = vectorVar(chickWing);
 
 	outfile << iterations << ","
 			<< numLivingChicks << ","
